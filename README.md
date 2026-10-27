@@ -1,15 +1,40 @@
-# SigmaOS-upgrade-legacy
+    # SigmaOS-upgrade-legacy
 
-Part of the SigmaOS multi-repository architecture.
+    Legacy upgrade path for older releases
 
-## Principles
-- MODULARITY: Single responsibility per repository
-- LOOSE COUPLING: Minimal dependencies between repos
-- INTERFACE SEGREGATION: Clear, focused public APIs
-- DETERMINISTIC TESTING: Comprehensive test coverage
+    Part of the **SigmaOS** sovereign operating-system ecosystem — a multi-repository
+    distribution modelled on Linux Mint and Omarchy Linux. See the parent
+    [`SigmaOS`](https://github.com/AaryanSinghChauhan09/SigmaOS) repository for the
+    full component index.
 
-## License
-SPDX-License-Identifier: GPL-3.0-or-later
+    ## Upstream inspirations
+    - https://github.com/linuxmint/mintupgrade-legacy
 
-## Copyright
-Copyright (C) 2026 SigmaOS Project
+    ## Design principles applied
+    - **Plan Before Apply**
+- **Fail-Fast**
+- **Defensive Programming**
+- **Separation of Concerns**
+- **KISS**
+- **Deterministic Testing**
+
+    ## Usage
+    Verbs: `check-requirements, plan, risks, apply-plan`
+
+    ```
+    $ sigma-upgrade check-requirements --facts system.json
+$ sigma-upgrade plan --packages packages.json --target 22.3
+$ sigma-upgrade risks --packages packages.json
+$ sigma-upgrade apply-plan --plan upgrade-plan.json           # dry-run
+$ sigma-upgrade apply-plan --plan upgrade-plan.json --yes     # execute
+
+    ```
+
+    ## Build & test
+    ```
+    make build
+    make test
+    ```
+
+    ## Licence
+    GNU General Public License v3.0 (FOSS).
