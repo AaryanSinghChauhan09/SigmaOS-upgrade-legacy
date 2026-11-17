@@ -1,6 +1,6 @@
 [component]
 name = "SigmaOS-upgrade-legacy"
-description = "SigmaOS subsystem component for upgrade-legacy"
+description = "Legacy upgrade path for older releases"
 version = "0.1.0"
 tier = 3
 
